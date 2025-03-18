@@ -1,0 +1,20 @@
+This tool lists fonts available in a windows16 environment.
+
+Developed for chasing down an issue with wine and Installshield 3.0.
+
+Building the open watcom compiler under linux (amd64):
+------------------------------------------------------
+
+Clone the repo, cd into it.
+Edit setvars.sh and uncomment:
+# export OWNOWGML=1
+Then run ./build.sh
+Then run ./build.sh rel to create the rel/ directory
+
+Building this test application:
+-------------------------------
+
+Edit Makefile to have WATCOM_RELEASE point to the rel path of your
+watcom compiler.
+
+Run make.
