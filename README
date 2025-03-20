@@ -1,4 +1,5 @@
-This tool lists fonts available in a windows16 environment.
+This tool lists fonts available in a windows16 and windows NT
+environment.
 
 Developed for chasing down an issue with wine and Installshield 3.0.
 
@@ -14,7 +15,8 @@ Then run ./build.sh rel to create the rel/ directory
 Building this test application:
 -------------------------------
 
-Edit Makefile to have WATCOM_RELEASE point to the rel path of your
-watcom compiler.
+Edit Makefile and point:
+WATCOM_RELEASE to the rel/ path of your watcom compiler.
+MINGW_PATH to your version of mingw32.
 
 Run make.
