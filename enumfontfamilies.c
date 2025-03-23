@@ -19,6 +19,8 @@
 #include <string.h>
 #include <windows.h>
 
+#if (WINVER < 0x0400)
+
 /*
  * In 16bit land, not everything is what it seems, and you need to deal
  * with far pointers appropriately.
@@ -38,6 +40,22 @@ font_enum_proc(const LOGFONT far *logfont, const NEWTEXTMETRIC far *metric,
 
 	return 1;
 }
+
+#else /* WINVER */
+
+/*
+ *
+ */
+static int CALLBACK
+font_enum_proc(const LOGFONTA *logfont, const TEXTMETRICA *metric,
+	       DWORD type, LPARAM param)
+{
+	printf("Font \"%s\"\n", logfont->lfFaceName);
+
+	return 1;
+}
+
+#endif /* WINVER */
 
 /*
  *

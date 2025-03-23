@@ -17,10 +17,10 @@ LD = $(CROSS_COMPILE)ld
 
 all: enumfontfamilies16.exe enumfontfamilies32.exe
 
-enumfontfamilies16.exe: enumfontfamilies16.c
-	$(WCC) $< $(WCCFLAGS)
+enumfontfamilies16.exe: enumfontfamilies.c
+	$(WCC) -fe=$@ $< $(WCCFLAGS)
 
-enumfontfamilies32.exe: enumfontfamilies32.c
+enumfontfamilies32.exe: enumfontfamilies.c
 	$(CC) $(CFLAGS) -o $@ $^ $(LDFLAGS)
 
 clean:
